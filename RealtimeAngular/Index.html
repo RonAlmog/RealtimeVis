@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Gauge Test</title>
+
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="http://bouil.github.io/angular-google-chart/ng-google-chart.js"></script>
+
+    <script src="ext-modules/psGauge/psGaugeModule.js"></script>
+    <script src="ext-modules/psGauge/psGaugeDirective.js"></script>
+    <script src="app/app.js"></script>
+
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script>
+        google.load('visualization', '1.0', { 'packages': ['gauge'] });
+        google.setOnLoadCallback(function () {
+            angular.bootstrap(document, ['app']);
+        });
+    </script>
+
+</head>
+<body>
+    <h1>Gauge Test</h1>
+    <ps-gauge></ps-gauge>
+</body>
+</html>
