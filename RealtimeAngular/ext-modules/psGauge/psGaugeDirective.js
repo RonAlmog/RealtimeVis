@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-angular.module('psGauge').directive('psGauge', function () {
+angular.module('psGauge').directive('psGauge', ['psWebMetricsService', function (psWebMetricsService) {
     return {
         templateUrl: 'ext-modules/psGauge/psGaugeTemplate.html',
         link: function (scope, el, attrs) {
@@ -23,6 +23,10 @@ angular.module('psGauge').directive('psGauge', function () {
 
             chart.draw(scope.data, scope.options);
 
+            scope.$on('psWebMetricsService-received-data-event', function (evt, data) {
+
+            });
+
 
         }
 
@@ -30,4 +34,4 @@ angular.module('psGauge').directive('psGauge', function () {
 
     };
 
-});
+}]);
