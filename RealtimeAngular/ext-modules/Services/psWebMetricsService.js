@@ -20,8 +20,27 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', ['$root
             alert(data);
         });
 
-    return {
+    var getTitle = function (metric) {
+        switch (metric) {
+            case 'time':
+                return 'Time';
+            case 'bandwidthPct':
+                return 'BW %';
+            case 'cpuPct':
+                return 'CPU %';
+            case 'salesAmt':
+                return 'Sales Amount';
+            case 'alphaSalesAmt':
+                return 'Alpha Sales Amount';
+            case 'betaSalesAmt':
+                return 'Beta Sales Amount';
+        }
+        return undefined;
 
+    }
+
+    return {
+        getTitle: getTitle
     }
 
 }]);
